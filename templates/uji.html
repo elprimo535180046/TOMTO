@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <title>UJI</title>
+    <style>
+      .container {
+          padding: 2rem 0rem;
+      }
+    </style>
+</head>
+<body>
+    <!-- header -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light text-center fixed-top">
+        <a class="navbar-brand" href="/">TOMTO</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="/home">Beranda</a>
+                <a class="nav-item nav-link" href="/about">Tentang</a>
+                <a class="nav-item nav-link" href="/jenisPenyakit">Jenis Penyakit</a>
+                <a class="nav-item nav-link active" href="/uji">Uji</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- body -->
+    <div class="container mt-3">
+        <div class="card mb-3 mt-5">
+          <div class="card-body">
+            <h5 class="card-title">Upload File</h5>
+            <p class="card-text">Silahkan pilih dan masukkan gambar yang ingin diuji dengan menekan tombol dibawah</p>
+            <form enctype="multipart/form-data" onsubmit="return false;">
+              <input type="file" id="imgTmt" name="imgTmt">
+              <button id="processImg" class="btn btn-primary btn-outline-secondary" onclick="process(this.form)">Uji</button>
+            </form>
+            <p id="text-info" class="card-text" hidden="true">Silahkan tunggu, sistem akan segera melakukan klasifikasi.</p>
+            <p id="text-warning" class="card-text" hidden="true">Terdapat kesalahan dalam sistem, silahkan coba upload kembali.</p>
+          </div>
+        </div>
+        <div class="card" id="card-result" hidden="true">
+          <div class="card-body">
+            <h5 class="card-title">Hasil Klasifikasi</h5>
+            <p class="card-text">Berdasarkan hasil klasifikasi, dapat disimpulkan data sebagai berikut :</p>
+            <img id="img-raw" class="card-img-top" hidden="true" >
+            <ul class="list-group list-group-flush mt-1">
+              <li class="list-group-item" id="klasifikasi-result"></li>
+              <li class="list-group-item" id="klasifikasi-acc"></li>
+            </ul>
+          </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <!-- <footer class="footer fixed-bottom bg-dark">
+      <div class="container">
+          <span class="text-muted">By El Primo Gemilang</span>
+      </div>
+    </footer> -->
+</body>
+</html>
+
+      
+<script>
+
+listImage = [];
+$("#imgTmt").change(function(e){
+  var file = $("input[type=file]").get(0).files[0];
+  if(file){
+    var textInfo = document.getElementById("text-info")
+    var textWarning = document.getElementById("text-warning")
+    textInfo.hidden = true
+    textWarning.hidden = true
+    var reader = new FileReader();
+    reader.readAsDataURL(file);
+
+    console.log(reader);
+    listImage.push(reader);
+  }
+})
+function process(form)
+{
+  const formData = new FormData(form);
+
+  var out = document.getElementById("static_file_res")
+  var textInfo = document.getElementById("text-info")
+  var textWarning = document.getElementById("text-warning")
+  var cardResult = document.getElementById("card-result")
+  var klasifikasiResult = document.getElementById("klasifikasi-result")
+  var klasifikasiAcc = document.getElementById("klasifikasi-acc")
+  var imgRaw = document.getElementById("img-raw")
+
+  // Hide div hasil dahulu
+  cardResult.hidden = true
+  textWarning.hidden = true
+
+  var req = new XMLHttpRequest();
+  req.open("POST", "uji/action", true);
+
+  req.onload = function(event) {
+    textInfo.hidden = true
+    if (req.response != null && req.response != "ERR")
+    {
+      console.log("200")
+      imgRaw.hidden = false
+      imgRaw.src = "\\static\\img\\rawUser.png?t=" + new Date().getTime();
+      imgRaw.style = "width:250px;text-align:center;"
+      kategoriRes = req.response
+      kategoriAcc = req.statusText
+      // Show div hasil
+      cardResult.hidden = false
+      klasifikasiResult.innerText = "Kategori : " + kategoriRes
+      klasifikasiAcc.innerText = "Akurasi Model ketika Training : " + kategoriAcc
+    }
+    else
+    {
+      imgRaw.hidden = true
+      console.log("500")
+      textWarning.hidden = false
+    }
+  }
+
+  textInfo.hidden = false
+  setTimeout(() => {
+    console.log("Classification started")
+    result= req.send(formData);
+    console.log(result);
+  }, 2000);
+}
+</script>

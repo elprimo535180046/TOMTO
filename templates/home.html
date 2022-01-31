@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <title>HOME</title>
+    <style>
+        .container {
+            padding: 2rem 0rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- header -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light text-center fixed-top">
+        <a class="navbar-brand" href="/">TOMTO</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="/home">Beranda</a>
+                <a class="nav-item nav-link" href="/about">Tentang</a>
+                <a class="nav-item nav-link" href="/jenisPenyakit">Jenis Penyakit</a>
+                <a class="nav-item nav-link" href="/uji">Uji</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- main -->
+    <main role="main">
+        <!-- Jumbotron -->
+        <div class="jumbotron" style="background-image: url('https://i.imgur.com/ILRgb7r.jpeg'); background-size: cover; background-repeat: no-repeat">
+            <div class="container">
+                <h1 class="display-3" style="color: white"><b>TOMTO</b></h1>
+                <p style="color: white"><b>Sistem klasifikasi jenis penyakit pada tumbuhan tomat</b></p>
+            </div>
+        </div>
+
+        <!-- body -->
+        <div class="container">
+            <div class="card-deck">
+                <div class="card">
+                    <img>
+                    <div class="card-body">
+                        <h5>Cara budidaya</h5>
+                        <p class="card-text">Melakukan budidaya tumbuhan tomat cukup mudah, lho! Tidak perlu kebun super luas, cukup ikuti cara ini.</p>
+                    </div>
+                    <div class="card-footer" style="text-align: center;">
+                        <p class="card-text"><a class="btn btn-primary btn-md" href="https://nad.litbang.pertanian.go.id/ind/images/13-BUDIDAYATANAMANTOMAT.pdf#page=3" role="button" target="_blank">Lihat caranya</a></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img>
+                    <div class="card-body">
+                        <h5>Cara kerja</h5>
+                        <p class="card-text">Sistem klasifikasi bekerja dengan melakukan pelatihan terhadap gambar tumbuhan tomat dengan atau tanpa penyakit. Kemudian, sistem akan menentukan apakah gambar yang diuji merupakan gambar
+                            dengan penyakit tertentu atau gambar tersebut merupakan tumbuhan tomat yang sehat.</p>
+                    </div>
+                    <div class="card-footer" style="text-align: center;">
+                        <p class="card-text"><a class="btn btn-primary btn-md" href="/uji" role="button">Mulai uji</a></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img>
+                    <div class="card-body">
+                        <h5>Jenis Penyakit</h5>
+                        <p class="card-text">Sistem klasifikasi ini dapat melakukan klasifikasi terhadap beberapa jenis penyakit yang dapat menyerang daun tomat. Selain itu, anda juga dapat melihat
+                            gambar dari penyakit tersebut.
+                        </p>
+                    </div>
+                    <div class="card-footer" style="text-align: center;">
+                        <p class="card-text"><a class="btn btn-primary btn-md" href="/jenisPenyakit" role="button">Lebih lanjut</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- footer -->
+    <footer class="footer fixed-bottom bg-dark">
+        <div class="container">
+            <span class="text-muted">By El Primo Gemilang</span>
+        </div>
+    </footer>
+</body>
+</html>

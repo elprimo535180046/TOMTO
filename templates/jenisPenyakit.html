@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <title>JENIS PENYAKIT</title>
+    <style>
+        .container {
+            padding: 2rem 0rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- header -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light text-center fixed-top">
+        <a class="navbar-brand" href="/">TOMTO</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="/home">Beranda</a>
+                <a class="nav-item nav-link" href="/about">Tentang</a>
+                <a class="nav-item nav-link active" href="/jenisPenyakit">Jenis Penyakit</a>
+                <a class="nav-item nav-link" href="/uji">Uji</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- body -->
+    <div class="container">
+        <h3 class="mt-5">Penjelasan Jenis Penyakit</h3>
+        <p>Pada website ini, terdapat beberapa jenis penyakit yang dapat diidentifikasi. Berikut ini merupakan daftar penyakit yang dapat diidentifikasi :</p>
+        <div class="row">
+            <div class="table-responsive col-12">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col" style="vertical-align: middle; text-align: center">Nama Penyakit</th>
+                            <th scope="col" style="vertical-align: middle; text-align: center;">Deskripsi Penyakit</th>
+                            <th scope="col" style="vertical-align: middle; text-align: center">Gambar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row" style="vertical-align: middle; width:17%; text-align: center;">Bercak Bakteri<br>(<i>Bacterial Spot</i>)</th>
+                            <td style="vertical-align: middle; width:65%">Disebabkan oleh bakteri <i>Xanthomonas</i>. Dapat menghasilkan lesi dan defoliasi pada tanaman. Penyakit ini banyak terjadi
+                                di daerah hangat dan lembab dalam satu musim. Sulit untuk dilakukan pengendalian penyakit.
+                            </td>
+                            <td class="w-100 h-100" style="vertical-align: middle; text-align: center">
+                                <a href="\static\img\BS_desc.JPG" target="_blank">
+                                    <img src="\static\img\BS_desc.JPG" class="img-thumbnail" alt="Bacterial Spot" style="width:auto; height: 150px;">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row" style="vertical-align: middle;text-align: center;">Pembusukan Dini<br>(<i>Early Blight</i>)</th>
+                            <td style="vertical-align: middle;">Disebabkan oleh jamur <i>Alternaria Solani</i>. Penyakit ini ditandai dengan cincin konsentris berwarna hitam seperti bintik daun
+                                dan dapat menyebabkan daun busuk, defoliasi serta keguguran pada buah yang belum matang.
+                            </td>
+                            <td class="w-100 h-100" style="vertical-align: middle; text-align: center">
+                                <a href="\static\img\EB_desc.JPG" target="_blank">
+                                    <img src="\static\img\EB_desc.JPG" class="img-thumbnail" alt="Early Blight" style="width:auto; height: 150px;">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row" style="vertical-align: middle;text-align: center;">Busuk Daun<br>(<i>Late Blight</i>)</th>
+                            <td style="vertical-align: middle;">Disebabkan oleh jamur <i>Phytophthora Infestans</i>. Dapat menyebabkan kerusakan besar pada tanaman dengan lingkungan lembab.
+                                Penyakit ditandai dengan munculnya bercak air hijau pucat mulai dari ujung daun dan dapat membesar dengan cepat.
+                            </td>
+                            <td class="w-100 h-100" style="vertical-align: middle; text-align: center">
+                                <a href="\static\img\LB_desc.JPG" target="_blank">
+                                    <img src="\static\img\LB_desc.JPG" class="img-thumbnail" alt="Late Blight" style="width:auto; height: 150px;">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row" style="vertical-align: middle;text-align: center;">Bercak Jamur<br>(<i>Leaf Mold</i>)</th>
+                            <td style="vertical-align: middle;">Disebabkan oleh jamur <i>Cladosporium fulfum</i>. Penyakit ini muncul pada tanaman dengan lingkungan lembab, dan banyak ditemukan
+                                pada tumbuhan yang dibudidayakan di rumah kaca.
+                            </td>
+                            <td class="w-100 h-100" style="vertical-align: middle; text-align: center">
+                                <a href="\static\img\LM_desc.JPG" target="_blank">
+                                    <img src="\static\img\LM_desc.JPG" class="img-thumbnail" alt="Leaf Mold" style="width:auto; height: 150px;">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row" style="vertical-align: middle;text-align: center;">Bercak Septoria<br>(<i>Septoria Leaf Spot</i>)</th>
+                            <td style="vertical-align: middle;">Disebabkan oleh jamur <i>Septoria lycopersici</i>. Penyakit ini dapat menyebar dengan cepat, serta dapat membuat tanaman mengalami
+                                defoliasi dan menurunkan daya tahan tanaman. Penyakit ini dapat diidentifikasi dengan adanya bintik kecil yang direndam air pada bagian bawah daun.
+                            </td>
+                            <td class="w-100 h-100" style="vertical-align: middle; text-align: center">
+                                <a href="\static\img\SL_desc.JPG" target="_blank">
+                                    <img src="\static\img\SL_desc.JPG" class="img-thumbnail" alt="Septoria Leaf" style="width:auto; height: 150px;">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row" style="vertical-align: middle;text-align: center;">Tungau Laba-laba<br>(<i>Spider Mites</i>)</th>
+                            <td style="vertical-align: middle;">Disebabkan oleh tungau laba-laba (<i>Tetranychus urticae Koch</i>). Tungau ini dapat berkembang dengan baik dalam kondisi hangat dan kering.
+                                Penyakit ini menyerang sel klorofil daun, sehingga daun berubah warna dan menyebabkan penurunan tingkat kesehatan tumbuhan.
+                            </td>
+                            <td class="w-100 h-100" style="vertical-align: middle; text-align: center">
+                                <a href="\static\img\SM_desc.JPG" target="_blank">
+                                    <img src="\static\img\SM_desc.JPG" class="img-thumbnail" alt="Spider Mites" style="width:auto; height: 150px;">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row" style="vertical-align: middle;text-align: center;">Bercak Target<br>(<i>Target Spot</i>)</th>
+                            <td style="vertical-align: middle;">Disebabkan oleh jamur. Penyakit ini tersebar di negara dengan iklim tropis, dengan infeksi penyakit ditandai
+                                adanya bintik tidak beraturan dengan garis tepi berwarna kuning. Penyakit ini dapat menurunkan hasil panen, serta membuat tumbuhan kehilangan banyak daun.
+                            </td>
+                            <td class="w-100 h-100" style="vertical-align: middle; text-align: center">
+                                <a href="\static\img\TS_desc.JPG" target="_blank">
+                                    <img src="\static\img\TS_desc.JPG" class="img-thumbnail" alt="Healthy" style="width:auto; height: 150px;">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row" style="vertical-align: middle;text-align: center;">Penyakit Mosaik<br>(<i>Mosaic Virus</i>)</th>
+                            <td style="vertical-align: middle;">Merupakan salah satu virus yang menyerang tumbuhan ini. Penyakit ditandai dengan adanya bercak hijau muda dan tua, 
+                                daun mungkin melengkung, berbentuk aneh dan ukurannya lebih kecil.
+                            </td>
+                            <td class="w-100 h-100" style="vertical-align: middle; text-align: center">
+                                <a href="\static\img\TM_desc.JPG" target="_blank">
+                                    <img src="\static\img\TM_desc.JPG" class="img-thumbnail" alt="Healthy" style="width:auto; height: 150px;">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row" style="vertical-align: middle;text-align: center;">Penyakit Virus Kuning<br>(<i>Yellow Leaf Curl Virus</i>)</th>
+                            <td style="vertical-align: middle;">Merupakan salah satu virus yang menyerang tumbuhan ini. Pada tumbuhan yang terinfeksi, daun akan berukuran lebih kecil,
+                                melengkung keatas, serta warnanya menjadi kuning.
+                            </td>
+                            <td class="w-100 h-100" style="vertical-align: middle; text-align: center">
+                                <a href="\static\img\LC_desc.JPG" target="_blank">
+                                    <img src="\static\img\LC_desc.JPG" class="img-thumbnail" alt="Healthy" style="width:auto; height: 150px;">
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+                <br>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="footer fixed-bottom bg-dark">
+        <div class="container">
+            <span class="text-muted">By El Primo Gemilang</span>
+        </div>
+    </footer>
+</body>
+</html>
